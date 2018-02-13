@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
+import { AppComponent } from "./app.component";
+import { CreateTeamComponent } from "./components/create-team/create-team.component";
 
-import { AppComponent } from './app.component';
-
+const routes = [
+  { path: "", redirectTo: "createTeam", pathMatch: "full" },
+  { path: "createTeam", component: CreateTeamComponent }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, CreateTeamComponent],
+  imports: [BrowserModule, RouterModule.forRoot(routes, { useHash: true })],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
