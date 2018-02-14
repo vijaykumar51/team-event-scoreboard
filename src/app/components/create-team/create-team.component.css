@@ -1,0 +1,18 @@
+.create-team-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.create-team-wrapper .player-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 50px;
+}
+
+.create-team-wrapper .player-grid-item {
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 5px 10px;
+  min-width: 200px;
+}

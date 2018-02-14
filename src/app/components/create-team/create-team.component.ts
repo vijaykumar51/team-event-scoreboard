@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { TeamService } from "../../services/team.service";
 import { Players } from "../../config/players";
 
 @Component({
@@ -7,7 +8,10 @@ import { Players } from "../../config/players";
   styleUrls: ["./create-team.component.css"]
 })
 export class CreateTeamComponent implements OnInit {
-  constructor() {}
+  private players: Array<string> = [];
+  constructor(private teamService: TeamService) {
+    this.players = Players.names;
+  }
 
   ngOnInit() {}
 }

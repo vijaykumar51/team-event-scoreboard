@@ -1,1 +1,8 @@
-Create Team Component
+<div class="create-team-wrapper">
+    <div class="player-grid-wrapper">
+        <div class="player-grid-item form-group checkbox-rounded checkbox-success-filled" *ngFor="let player of players">
+            <input id={{player}} class="filled-in" type="checkbox" value={{player}}>
+            <label for={{player}}>{{player}}</label>
+        </div>
+    </div>
+</div>
