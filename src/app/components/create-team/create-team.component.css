@@ -9,6 +9,10 @@
   padding: 50px 50px 0;
 }
 
+.create-team-wrapper .game-option-wrapper .select-all-wrapper {
+  position: relative;
+}
+
 .create-team-wrapper .game-option-wrapper .team-size-wrapper {
   text-align: right;
 }
@@ -33,11 +37,13 @@
   position: relative;
 }
 
-.create-team-wrapper .player-grid-item span {
+.create-team-wrapper .player-grid-item span,
+.create-team-wrapper .select-all-wrapper span {
   margin-left: 20px;
 }
 
-.create-team-wrapper .player-grid-item label {
+.create-team-wrapper .player-grid-item label,
+.create-team-wrapper .select-all-wrapper label {
   background-color: #e9ddc7;
   border: 1px solid #e9ddc7;
   border-radius: 50%;
@@ -49,7 +55,8 @@
   width: 28px;
 }
 
-.create-team-wrapper .player-grid-item label:after {
+.create-team-wrapper .player-grid-item label:after,
+.create-team-wrapper .select-all-wrapper label:after {
   border: 2px solid #fff;
   border-top: none;
   border-right: none;
@@ -63,11 +70,16 @@
   width: 12px;
 }
 
-.create-team-wrapper .player-grid-item input[type="checkbox"] {
+.create-team-wrapper .player-grid-item input[type="checkbox"],
+.create-team-wrapper .select-all-wrapper input[type="checkbox"] {
   visibility: hidden;
 }
 
-.create-team-wrapper .player-grid-item input[type="checkbox"]:checked + label {
+.create-team-wrapper .player-grid-item input[type="checkbox"]:checked + label,
+.create-team-wrapper
+  .select-all-wrapper
+  input[type="checkbox"]:checked
+  + label {
   background-color: #00b16a;
   border-color: #00b16a;
   /* background-color: #21988e; */
@@ -76,8 +88,17 @@
 .create-team-wrapper
   .player-grid-item
   input[type="checkbox"]:checked
+  + label:after,
+.create-team-wrapper
+  .select-all-wrapper
+  input[type="checkbox"]:checked
   + label:after {
   opacity: 1;
+}
+
+.create-team-wrapper .game-option-wrapper .select-all-wrapper span {
+  display: inline-block;
+  margin: 8px 25px 0;
 }
 
 .create-team-wrapper .generate-button-wrapper {
