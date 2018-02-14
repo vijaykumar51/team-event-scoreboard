@@ -8,7 +8,8 @@ import { Players } from "../../config/players";
   styleUrls: ["./create-team.component.css"]
 })
 export class CreateTeamComponent implements OnInit {
-  private players: Array<object> = [];
+  public players: Array<object> = [];
+  public selectAll: boolean = false;
   constructor(private teamService: TeamService) {
     Players.names.forEach(name => {
       this.players.push({ name, selected: false });
@@ -18,7 +19,13 @@ export class CreateTeamComponent implements OnInit {
   ngOnInit() {}
 
   public formTeams() {
-    console.info("formTeams");
     this.teamService.formTeams([]);
+  }
+
+  public selectAllPlayers() {
+    let newSelectValue = this.selectAll ? true : false;
+    this.players.forEach(player => {
+      console.info((player["selected"] = newSelectValue));
+    });
   }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
@@ -14,7 +15,11 @@ const routes = [
 
 @NgModule({
   declarations: [AppComponent, CreateTeamComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes, { useHash: true })],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes, { useHash: true })
+  ],
   providers: [TeamService],
   bootstrap: [AppComponent]
 })
