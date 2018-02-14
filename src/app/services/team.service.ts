@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 export class TeamService {
   constructor() {}
 
-  public createTeam(players: Array<string>) {
+  public formTeams(players: Array<string>) {
     return "";
   }
 }

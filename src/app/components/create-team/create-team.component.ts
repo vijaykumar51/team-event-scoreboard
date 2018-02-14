@@ -8,10 +8,17 @@ import { Players } from "../../config/players";
   styleUrls: ["./create-team.component.css"]
 })
 export class CreateTeamComponent implements OnInit {
-  private players: Array<string> = [];
+  private players: Array<object> = [];
   constructor(private teamService: TeamService) {
-    this.players = Players.names;
+    Players.names.forEach(name => {
+      this.players.push({ name, selected: false });
+    });
   }
 
   ngOnInit() {}
+
+  public formTeams() {
+    console.info("formTeams");
+    this.teamService.formTeams([]);
+  }
 }

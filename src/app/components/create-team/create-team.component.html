@@ -1,8 +1,24 @@
 <div class="create-team-wrapper">
+    <div class="game-option-wrapper">
+        <div class="select-all-wrapper">Select All Players</div>
+        <div class="team-size-wrapper">
+            <span class="team-size-label">Players per team</span>
+            <select class="team-size-selector custom-select">
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="1">6</option>
+            </select>
+        </div>
+    </div>
     <div class="player-grid-wrapper">
         <div class="player-grid-item form-group checkbox-rounded checkbox-success-filled" *ngFor="let player of players">
-            <input id={{player}} class="filled-in" type="checkbox" value={{player}}>
-            <label for={{player}}>{{player}}</label>
+            <input id={{player.name}} [checked]="player.selected" class="filled-in" type="checkbox" value={{player.name}}>
+            <label for={{player.name}}>{{player.name}}</label>
         </div>
+    </div>
+    <div class="generate-button-wrapper">
+        <input type="button" class="btn btn-primary" value="Make Teams" (click)="makeTeams()">
     </div>
 </div>
