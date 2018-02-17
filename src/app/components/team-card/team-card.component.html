@@ -8,5 +8,12 @@
                 <li class="list-group-item" *ngFor="let player of teamPlayers">{{player}}</li>
             </ul>
         </div>
+        <div class="card-footer add-new-player">
+            <button type="button" class="btn btn-primary" *ngIf="!showInputBox" (click)="showPlayerInputBox()">Add Player</button>
+            <div class="new-player-input-box form-inline" *ngIf="showInputBox">
+                <input type="text" #playerName class="player-name form-control">
+                <button type="button" class="btn btn-primary form-control" (click)="addPlayer(playerName)">Add</button>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,3 +1,12 @@
 .team-card {
   color: #000;
 }
+
+.team-card .new-player-input-box {
+  margin: 0 auto;
+  width: 280px;
+}
+
+.team-card .new-player-input-box button {
+  margin-left: 15px;
+}
