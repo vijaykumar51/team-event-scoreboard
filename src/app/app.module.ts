@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { CreateTeamComponent } from "./components/create-team/create-team.component";
 import { ViewTeamComponent } from "./components/view-team/view-team.component";
+import { TeamCardComponent } from "./components/team-card/team-card.component";
 
 import { TeamService } from "./services/team.service";
 import { DataStoreService } from "./services/data-store.service";
@@ -17,7 +18,12 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, CreateTeamComponent, ViewTeamComponent],
+  declarations: [
+    AppComponent,
+    CreateTeamComponent,
+    TeamCardComponent,
+    ViewTeamComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

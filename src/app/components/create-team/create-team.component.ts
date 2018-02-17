@@ -17,7 +17,7 @@ export class CreateTeamComponent implements OnInit {
   public teamSizeOptions: Array<number> = [2, 3, 4, 5, 6];
 
   public teamSize: number = 4;
-  public teams: Array<Array<string>> = [];
+  public teams: Map<string, Array<string>> = new Map();
   constructor(
     private router: Router,
     private teamService: TeamService,

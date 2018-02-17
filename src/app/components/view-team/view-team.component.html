@@ -1,1 +1,5 @@
-View Team Component
+<div class="view-team">
+    <div class="team-holder" *ngFor="let teamName of teamNames">
+        <app-team-card [teamName]="teamName" [teamPlayers]="teams.get(teamName)"></app-team-card>
+    </div>
+</div>
