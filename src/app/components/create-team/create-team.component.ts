@@ -44,6 +44,6 @@ export class CreateTeamComponent implements OnInit {
       }
     });
     let teams = this.teamService.formTeams(this.teamSize, this.selectedPlayers);
-    console.warn(this.players);
+    console.warn(teams);
   }
 }
