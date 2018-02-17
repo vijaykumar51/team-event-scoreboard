@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { TeamService } from "../../services/team.service";
+import { DataStoreService } from "../../services/data-store.service";
 import { Players } from "../../config/players";
 
 @Component({
@@ -15,7 +17,12 @@ export class CreateTeamComponent implements OnInit {
   public teamSizeOptions: Array<number> = [2, 3, 4, 5, 6];
 
   public teamSize: number = 4;
-  constructor(private teamService: TeamService) {
+  public teams: Array<Array<string>> = [];
+  constructor(
+    private router: Router,
+    private teamService: TeamService,
+    private dataStoreService: DataStoreService
+  ) {
     Players.names.forEach(name => {
       this.players.push({ name, selected: false });
     });
@@ -43,7 +50,16 @@ export class CreateTeamComponent implements OnInit {
         this.selectedPlayers.push(player["name"]);
       }
     });
-    let teams = this.teamService.formTeams(this.teamSize, this.selectedPlayers);
-    console.warn(teams);
+    this.teams = this.teamService.formTeams(
+      this.teamSize,
+      this.selectedPlayers
+    );
+    this.saveDataToStore();
+    this.router.navigate(["/viewTeam"]);
+  }
+
+  private saveDataToStore() {
+    this.dataStoreService.teamSize = this.teamSize;
+    this.dataStoreService.teams = this.teams;
   }
 }

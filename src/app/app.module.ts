@@ -8,6 +8,7 @@ import { CreateTeamComponent } from "./components/create-team/create-team.compon
 import { ViewTeamComponent } from "./components/view-team/view-team.component";
 
 import { TeamService } from "./services/team.service";
+import { DataStoreService } from "./services/data-store.service";
 
 const routes = [
   { path: "", redirectTo: "createTeam", pathMatch: "full" },
@@ -22,7 +23,7 @@ const routes = [
     FormsModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
-  providers: [TeamService],
+  providers: [DataStoreService, TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
