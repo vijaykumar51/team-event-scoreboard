@@ -4,7 +4,9 @@ import { Injectable } from "@angular/core";
 export class TeamService {
   constructor() {}
 
-  public formTeams(players: Array<string>) {
-    return "";
+  public formTeams(teamSize: number, players: Array<string>) {
+    let totalTeams = Math.ceil(players.length / teamSize);
+    console.warn("totalTeams", totalTeams);
+    return players;
   }
 }

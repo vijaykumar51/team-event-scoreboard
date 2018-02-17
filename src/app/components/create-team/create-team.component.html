@@ -7,23 +7,19 @@
         </div>
         <div class="team-size-wrapper">
             <span class="team-size-label">Players per team</span>
-            <select class="team-size-selector custom-select">
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="1">6</option>
+            <select class="team-size-selector custom-select" [(ngModel)]="teamSize">
+                <option *ngFor="let teamSize of teamSizeOptions" [value]="teamSize">{{teamSize}}</option>
             </select>
         </div>
     </div>
     <div class="player-grid-wrapper">
         <div class="player-grid-item form-group checkbox-rounded checkbox-success-filled" *ngFor="let player of players">
-            <input id={{player.name}} [checked]="player.selected" class="filled-in" type="checkbox" value={{player.name}}>
+            <input id={{player.name}} class="filled-in" (change)="changePlayer(player)" type="checkbox" [(ngModel)]="player.selected">
             <label for={{player.name}}></label>
             <span class="name-label">{{player.name}}</span>
         </div>
     </div>
     <div class="generate-button-wrapper">
-        <input type="button" class="btn btn-primary" value="Make Teams" (click)="makeTeams()">
+        <input type="button" class="btn btn-primary" value="Make Teams" (click)="formTeams()">
     </div>
 </div>

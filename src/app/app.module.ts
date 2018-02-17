@@ -5,16 +5,18 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { CreateTeamComponent } from "./components/create-team/create-team.component";
+import { ViewTeamComponent } from "./components/view-team/view-team.component";
 
 import { TeamService } from "./services/team.service";
 
 const routes = [
   { path: "", redirectTo: "createTeam", pathMatch: "full" },
-  { path: "createTeam", component: CreateTeamComponent }
+  { path: "createTeam", component: CreateTeamComponent },
+  { path: "viewTeam", component: ViewTeamComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, CreateTeamComponent],
+  declarations: [AppComponent, CreateTeamComponent, ViewTeamComponent],
   imports: [
     BrowserModule,
     FormsModule,
