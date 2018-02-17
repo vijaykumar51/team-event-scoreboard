@@ -33,7 +33,7 @@ export class CreateTeamComponent implements OnInit {
   public selectAllPlayers() {
     let newSelectValue = this.selectAll ? true : false;
     this.players.forEach(player => {
-      console.info((player["selected"] = newSelectValue));
+      player["selected"] = newSelectValue;
     });
   }
 
