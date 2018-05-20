@@ -1,1 +1,19 @@
-UPload players data
+<div class="upload-data">
+    <div class="import-parent-container card text-center">
+        <div class="card-header">
+            Upload players data
+        </div>
+        <div class="card-body">
+            <input #csvFileInput type="file" id="csvFile" accept=".csv" required (change)="parseCsvFile($event)">
+        </div>
+        <div class="card-footer">
+            <div class="use-dummy">
+                <input type="checkbox" id="useDummyData" [(ngModel)]="useDummyData">
+                <label for="useDummyData">Use dummy data</label>
+            </div>
+            <div class="confirm-button-container">
+                <button id="confirmData" class="btn btn-primary" (click)="confirmSelection()">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

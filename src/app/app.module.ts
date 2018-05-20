@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { PapaParseModule } from "ngx-papaparse";
 
 import { AppComponent } from "./app.component";
 import { UploadPlayersDataComponent } from "./components/upload-players-data/upload-player-data.component";
@@ -36,6 +37,7 @@ const routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    PapaParseModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [DataStoreService, TeamCheckGuard, TeamService],
