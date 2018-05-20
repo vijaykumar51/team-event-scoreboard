@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { TeamService } from "../../services/team.service";
 import { DataStoreService } from "../../services/data-store.service";
-import { Players } from "../../config/players";
 
 @Component({
   selector: "app-create-team",
@@ -23,7 +22,7 @@ export class CreateTeamComponent implements OnInit {
     private teamService: TeamService,
     private dataStoreService: DataStoreService
   ) {
-    Players.names.forEach(name => {
+    this.dataStoreService.players.forEach(name => {
       this.players.push({ name, selected: false });
     });
   }

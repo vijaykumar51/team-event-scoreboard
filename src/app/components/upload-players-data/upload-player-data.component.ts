@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+import { Router } from "@angular/router";
 import { PapaParseService } from "ngx-papaparse";
 import { DataStoreService } from "../../services/data-store.service";
 import { Players } from "../../config/players";
@@ -13,6 +14,7 @@ export class UploadPlayersDataComponent {
   public importHasErrors: boolean = false;
   public useDummyData: boolean = false;
   constructor(
+    private router: Router,
     private papaParseService: PapaParseService,
     private dataStoreService: DataStoreService
   ) {}
@@ -38,6 +40,6 @@ export class UploadPlayersDataComponent {
       console.info("default", Players.names);
       this.dataStoreService.players = Players.names;
     }
-    console.info(this.dataStoreService.players);
+    this.router.navigate(["/createTeam"]);
   }
 }
