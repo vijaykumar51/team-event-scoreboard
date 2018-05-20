@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:dev": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,8 +15,10 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "1.6.8",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
@@ -24,17 +27,20 @@
     "@angular/router": "^5.2.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
     "ngx-papaparse": "^2.1.0",
     "papaparse": "^4.4.0",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19",
-    "@angular/cli": "1.6.8"
+    "typescript": "~2.5.3",
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^5.2.0",
-    "@angular/language-service": "^5.2.0",
-    "typescript": "~2.5.3"
+    "@angular/language-service": "^5.2.0"
+  },
+  "engines": {
+    "node": "8.11.0",
+    "npm": "5.8.0"
   }
 }
