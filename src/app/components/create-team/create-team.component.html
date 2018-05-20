@@ -6,6 +6,7 @@
             <span>Select All Players</span>
         </div>
         <div class="team-size-wrapper">
+            <span class="total-selected">{{selectedPlayersCount}} selected</span>
             <span class="team-size-label">Players per team</span>
             <select class="team-size-selector custom-select" [(ngModel)]="teamSize">
                 <option *ngFor="let teamSize of teamSizeOptions" [value]="teamSize">{{teamSize}}</option>

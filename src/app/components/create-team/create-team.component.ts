@@ -12,6 +12,7 @@ export class CreateTeamComponent implements OnInit {
   public players: Array<object> = [];
   public selectedPlayers: Array<string> = [];
   public selectAll: boolean = false;
+  public selectedPlayersCount: number = 0;
 
   public teamSizeOptions: Array<number> = [2, 3, 4, 5, 6];
 
@@ -31,6 +32,9 @@ export class CreateTeamComponent implements OnInit {
 
   public selectAllPlayers() {
     let newSelectValue = this.selectAll ? true : false;
+    this.selectAll
+      ? (this.selectedPlayersCount = this.players.length)
+      : (this.selectedPlayersCount = 0);
     this.players.forEach(player => {
       player["selected"] = newSelectValue;
     });
@@ -39,6 +43,9 @@ export class CreateTeamComponent implements OnInit {
   public changePlayer(player) {
     if (!player.selected) {
       this.selectAll = false;
+      this.selectedPlayersCount--;
+    } else {
+      this.selectedPlayersCount++;
     }
   }
 

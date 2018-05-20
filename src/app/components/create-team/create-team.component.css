@@ -22,6 +22,11 @@
   width: 300px;
 }
 
+.create-team-wrapper .total-selected {
+  position: relative;
+  left: -200px;
+}
+
 .create-team-wrapper .player-grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
